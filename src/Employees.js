@@ -3,7 +3,7 @@ import { useState } from "react";
 import femaleProfile from "./images/femaleProfile.jpg";
 import maleProfile from "./images/maleProfile.jpg";
 const Employees = () => {
-    const {selectedTeam, setTeam} = useState("TeamB");
+    const [selectedTeam, setTeam] = useState("TeamB");
   const [employees, setEmployees] = useState([
     {
       id: 1,
@@ -117,12 +117,12 @@ const Employees = () => {
       {/** bootstrap card rendering for employees */}
       <div className="row justify-content-center mt-3 mb-3">
         <div className="col-8">
-          <div class="card-collection">
+          <div className="card-collection">
             {
             employees.map((employee) => (
               <div
                 id={employee.id}
-                className="card m-2"
+                className={(employee.teamName === selectedTeam? 'card m-2 standout': 'card m-2')}
                 style={{ cursor: "pointer" }}
                 onClick={handleEmployeeCardClick}
               >

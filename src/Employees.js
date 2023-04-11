@@ -1,7 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import femaleProfile from "./images/femaleProfile.jpg";
 import maleProfile from "./images/maleProfile.jpg";
-const Employees = ({employees, selectedTeam,handleEmployeeCardClick,handleTeamSelectionChange}) => {
+const Employees = ({
+  employees,
+  selectedTeam,
+  handleEmployeeCardClick,
+  handleTeamSelectionChange,
+}) => {
   return (
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
@@ -23,7 +28,7 @@ const Employees = ({employees, selectedTeam,handleEmployeeCardClick,handleTeamSe
         <div className="col-8">
           <div className="card-collection">
             {employees.map((employee) => (
-              <div
+              <div key={employee.id}
                 id={employee.id}
                 className={
                   employee.teamName === selectedTeam

@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Employees from "./Employees";
 import GroupedTeamMembers from "./GroupedTeamMembers";
+import Nav from "./Nav";
 
 function App() {
   const [selectedTeam, setTeam] = useState(
@@ -126,6 +127,7 @@ function App() {
 
   return (
     <Router>
+    <Nav/>
       <Header
         selectedTeam={selectedTeam}
         teamMemberCount={
